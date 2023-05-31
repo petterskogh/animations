@@ -8,8 +8,6 @@ function initAnimations() {
   
   const eagerElements = document.querySelectorAll('[data-animation-eager]');
   const lazyElements = document.querySelectorAll('[data-animation]:not([data-animation-eager])');
-  
-  console.log(eagerElements.length);
 
   triggerOnEnterScreen((element) => {
     animate(element, element.dataset.animation);
