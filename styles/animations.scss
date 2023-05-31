@@ -1,0 +1,45 @@
+[data-animation] {
+  visibility: hidden;
+}
+
+.fade-up {
+  animation-name: fade-in, move-up;
+  animation-duration: 0.5s, 0.5s;
+  animation-timing-function: ease-out, ease-out;
+}
+
+.clip-right {
+  animation-name: clip-right;
+  animation-duration: 0.75s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes move-up {
+  0% {
+    transform: translateY(2rem);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes clip-right {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}

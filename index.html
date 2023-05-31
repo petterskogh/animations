@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>VA 1/6-23</title>
+</head>
+
+<body>
+  <header>
+    <h1 data-animation="clip-right" data-animation-eager>
+      Animations are great
+    </h1>
+    <a href="#first-section" data-animation="fade-up" data-animation-delay="500" data-animation-eager>
+      <i>👆</i> Show me why
+    </a>
+  </header>
+
+  <main>
+    <section id="first-section" data-animation="fade-up">
+      <h2>Make your web page come alive</h2>
+      <p>Animations can add a touch of visual flair and sophistication to your website. They can make your design more dynamic and captivating, elevating the overall aesthetic appeal and making a strong first impression on visitors.</p>
+    </section>
+
+    <section data-animation="fade-up">
+      <h2>Engage your users</h2>
+      <p>Well-executed animations can captivate users and create a sense of delight and engagement. By incorporating subtle animations or micro-interactions, such as hover effects or smooth transitions, you can make your website more visually interesting and encourage users to explore further.</p>
+    </section>
+
+    <section>
+      <h2>4 more reasons to use animations</h2>
+      <ul data-animation="fade-up" data-animation-option="roll-children">
+        <li><i>👀</i>Guide the users attention</li>
+        <li><i>📲</i>Convey interactivity</li>
+        <li><i>💃</i>Reflect brand personality</li>
+        <li><i>🫀</i>Convey emotion</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="animations.js"></script>
+  <noscript>
+    <style>
+      [data-animation] {
+        visibility: visible !important;
+      }
+    </style>
+  </noscript>
+</body>
+</html>

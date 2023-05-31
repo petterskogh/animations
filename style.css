@@ -1,0 +1,121 @@
+[data-animation] {
+  visibility: hidden;
+}
+
+.fade-up {
+  animation-name: fade-in, move-up;
+  animation-duration: 0.5s, 0.5s;
+  animation-timing-function: ease-out, ease-out;
+}
+
+.clip-right {
+  animation-name: clip-right;
+  animation-duration: 0.75s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes move-up {
+  0% {
+    transform: translateY(2rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes clip-right {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Verdana, sans-serif;
+  font-size: 16px;
+  color: #222222;
+  background-color: #fffcf7;
+}
+
+i {
+  font-style: normal;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #222222;
+}
+header h1 {
+  font-size: 4rem;
+  color: #fffcf7;
+}
+header a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  border: 1px solid #fffcf7;
+  background-color: #fffcf7;
+  color: #222222;
+  border-radius: 10rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  header a {
+    transition: none;
+  }
+}
+header a i {
+  transform: rotate(180deg);
+}
+header a:hover {
+  background-color: #222222;
+  color: #fffcf7;
+}
+header a:hover i {
+  animation-name: dip;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 2;
+}
+@media (prefers-reduced-motion: reduce) {
+  header a:hover i {
+    animation: none;
+  }
+}
+
+@keyframes dip {
+  0% {
+    transform: translateY(0) scaleY(1) rotate(180deg);
+  }
+  50% {
+    transform: translateY(0.5rem) scaleY(0.9) rotate(180deg);
+  }
+  100% {
+    transform: translateY(0) scaleY(1) rotate(180deg);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
