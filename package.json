@@ -1,0 +1,23 @@
+{
+  "name": "animations",
+  "version": "1.0.0",
+  "description": "Showcase animations for VA 1/6-2023",
+  "scripts": {
+    "start": "concurrently --kill-others \"live-server\" \"sass styles/main.scss style.css --watch\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petterskogh/animations.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/petterskogh/animations/issues"
+  },
+  "homepage": "https://github.com/petterskogh/animations#readme",
+  "devDependencies": {
+    "concurrently": "^8.0.1",
+    "live-server": "^1.2.2",
+    "sass": "^1.62.1"
+  }
+}
