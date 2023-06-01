@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Showcase animations for VA 1/6-2023",
   "scripts": {
-    "start": "concurrently --kill-others \"live-server\" \"sass styles/main.scss style.css --watch\""
+    "start": "concurrently --kill-others \"live-server\" \"sass styles/main.scss build/style.css --watch\""
   },
   "repository": {
     "type": "git",
