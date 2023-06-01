@@ -9,7 +9,7 @@
 }
 
 @mixin no-animation-on-reduced-motion {
-  @media (prefers-reduced-motion: reduce) {
+  @media (prefers-reduced-motion) {
     animation: none;
     transition: none;
   }
