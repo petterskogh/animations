@@ -18,21 +18,27 @@ function initAnimations() {
   });
 }
 
-function animate(element, animation, delay = 0) {
+function animate(element) {
   if(element === null) {
     return;
   }
 
+  const delay = element.dataset.animationDelay;
   if(delay === null || delay === 0) {
-    element.style.visibility = 'visible';
-    element.classList.add(animation);
+    addAnimationClass(element, element.dataset.animation);
     return;
   }
 
-  setTimeout(() => {
-    element.style.visibility = 'visible';
-    element.classList.add(animation);
-  }, delay);
+  addAnimationClass(element, element.dataset.animation);
+
+  if(element.dataset.animationChildren !== undefined) {
+    animateChildren(element);
+  }
+}
+
+function addAnimationClass(element, animation) {
+  element.style.visibility = 'visible';
+  element.classList.add(animation);
 }
 
 function triggerOnEnterScreen(enterScreenCallback, elements) {
@@ -49,4 +55,15 @@ function triggerOnEnterScreen(enterScreenCallback, elements) {
   elements.forEach((element) => {
     enterScreenObserver.observe(element);
   });
+}
+
+function animateChildren(element) {
+  const children = element.children;
+  for(let i = 0; i < children.length; i++) {
+    const delay = element.dataset.animationChildren * i;
+    children[i].style.visibility = 'hidden';
+    setTimeout(() => {
+      addAnimationClass(children[i], element.dataset.animation);
+    }, delay);
+  }
 }
