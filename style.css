@@ -12,18 +12,36 @@
   animation-duration: 0.5s, 0.5s;
   animation-timing-function: ease-out, ease-out;
 }
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    animation: none;
+    transition: none;
+  }
+}
 
 .clip-right {
   animation-name: clip-right;
   animation-duration: 0.75s;
   animation-timing-function: ease-out;
 }
+@media (prefers-reduced-motion: reduce) {
+  .clip-right {
+    animation: none;
+    transition: none;
+  }
+}
 
 .shake {
   animation-name: shake;
   animation-duration: 0.3s;
-  animation-timing-function: ease-out;
+  animation-timing-function: ease-in-out;
   animation-iteration-count: 3;
+}
+@media (prefers-reduced-motion: reduce) {
+  .shake {
+    animation: none;
+    transition: none;
+  }
 }
 
 @keyframes fade-in {
@@ -117,6 +135,7 @@ header a {
 }
 @media (prefers-reduced-motion: reduce) {
   header a {
+    animation: none;
     transition: none;
   }
 }
@@ -128,7 +147,7 @@ header a:hover {
   color: #fffcf7;
 }
 header a:hover i {
-  animation-name: dip;
+  animation-name: hand-down-dip;
   animation-duration: 0.4s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 2;
@@ -136,10 +155,11 @@ header a:hover i {
 @media (prefers-reduced-motion: reduce) {
   header a:hover i {
     animation: none;
+    transition: none;
   }
 }
 
-@keyframes dip {
+@keyframes hand-down-dip {
   0% {
     transform: translateY(0) scaleY(1) rotate(180deg);
   }

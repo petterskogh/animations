@@ -63,10 +63,7 @@ header {
     cursor: pointer;
 
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-
-    @media (prefers-reduced-motion: reduce) {
-      transition: none;
-    }
+    @include no-animation-on-reduced-motion;
 
     i {
       transform: rotate(180deg);
@@ -77,20 +74,17 @@ header {
       color: $white;
 
       i {
-        animation-name: dip;
+        animation-name: hand-down-dip;
         animation-duration: 0.4s;
         animation-timing-function: ease-in-out;
         animation-iteration-count: 2;
-
-        @media (prefers-reduced-motion: reduce) {
-          animation: none;          
-        }
+        @include no-animation-on-reduced-motion;
       }
     }
   }
 }
 
-@keyframes dip {
+@keyframes hand-down-dip {
   0% {
     transform: translateY(0) scaleY(1) rotate(180deg);
   }

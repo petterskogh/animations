@@ -8,23 +8,33 @@
   }
 }
 
+@mixin no-animation-on-reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    transition: none;
+  }
+}
+
 .fade-up {
   animation-name: fade-in, move-up;
   animation-duration: 0.5s, 0.5s;
   animation-timing-function: ease-out, ease-out;
+  @include no-animation-on-reduced-motion;
 }
 
 .clip-right {
   animation-name: clip-right;
   animation-duration: 0.75s;
   animation-timing-function: ease-out;
+  @include no-animation-on-reduced-motion;
 }
 
 .shake {
   animation-name: shake;
   animation-duration: 0.3s;
-  animation-timing-function: ease-out;
+  animation-timing-function: ease-in-out;
   animation-iteration-count: 3;
+  @include no-animation-on-reduced-motion;
 }
 
 @keyframes fade-in {
